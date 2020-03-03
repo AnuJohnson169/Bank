@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <p><a href="{{url_for('add_account')}}">Create new account</a></p>
+    <p><a href="{{url_for('close_account')}}">Close account</a></p>
+    <p><a href="{{url_for('withdraw_amount')}}">Withdrawal</a></p>
+    <p><a href="{{url_for('deposit_amount')}}">Deposit</a></p>
+    <p><a href="{{url_for('balance_enquiry')}}">Check balance</a></p>
+    <p><a href="{{url_for('display_balance')}}">Display Accounts</a></p>
+    <p><a href="{{url_for('logout')}}">logout</a></p>
+{% endblock %}    

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<fieldset>
+    <legend>Display Balance</legend>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>ACCOUNT NO</th>
+            <th>ACCOUNT NAME</th>
+            <th>ACCOUNT TYPE</th>
+            <th>BALANCE</th>
+        </tr>
+        {% for b in bank %}
+            <tr>
+                <td>{{b._id}}</td>
+                <td>{{b.accno}}</td>
+                <td>{{b.accname}}</td>
+                <td>{{b.acctype}}</td>
+                <td>{{b.bal}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+    <p><a href="{{url_for('menu')}}">Back to menu</a></p>
+{% endblock %}
+
+
+
+

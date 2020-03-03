@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Withdrawal</legend>
+    <p>{{form.accno.label}}{{form.accno(size=32, autofocus=True)}}
+        {% for error in form.accno.errors %}
+            <span style="color:red";>{{error}}</span>
+        {% endfor %}
+    </p>
+    <p>{{form.widamt.label}}{{form.widamt(size=32)}}</p>
+    <p class="button">{{form.submit()}}</p>
+    </fieldset>
+        <p><a href="{{url_for('menu')}}">Back to menu</a></p>
+</form>
+{% endblock %}    
+    

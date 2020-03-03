@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Create new account</legend>
+    <p>{{form.accno.label}}{{form.accno(size=32, autofocus=True)}}
+        {% for error in form.accno.errors %}
+            <span style="color:red";>{{error}}</span>
+        {% endfor %}
+    </p>
+    <p>{{form.accname.label}}{{form.accname(size=32)}}
+        {% for error in form.accname.errors %}
+            <span style="color:red";>{{error}}</span>
+        {% endfor %}
+    </p>
+     <p>{{form.acctype.label}}{{form.acctype(size=32)}}
+        {% for error in form.acctype.errors %}
+            <span style="color:red";>{{error}}</span>
+        {% endfor %}
+    </p>
+    <p>{{form.bal.label}}{{form.bal(size=32)}}
+        {% for error in form.bal.errors %}
+            <span style="color:red";>{{error}}</span>
+        {% endfor %}
+    </p>
+    <p>{{form.submit()}}</p>
+    </fieldset>
+    <p><a href="{{url_for('menu')}}">Back to menu</a></p>
+</form>
+{% endblock %}    
+    
